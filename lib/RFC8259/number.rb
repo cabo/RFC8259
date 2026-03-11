@@ -133,7 +133,7 @@ class RFC8259::Number < RFC8259::Value
 		# pre-cache common computations
 		@to_s = [@sign, @int, @frac, @exp].join.encode(Encoding::US_ASCII) # this must be OK
 		@to_s.freeze # just in case
-		@to_d = BigDecimal.new @to_s
+		@to_d = BigDecimal(@to_s)
 	end
 end
 
